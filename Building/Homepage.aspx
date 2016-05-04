@@ -61,7 +61,7 @@
                 <div> 
                     <h2 id="h3" style="text-align:center; color: #808080; float: none;">Welcome to HappyBuildings</h2>
                 </div>
-                <asp:TextBox ID="directory" runat="server" OnLoad="directory_Load"></asp:TextBox>               
+                <asp:TextBox ID="directory" runat="server" OnLoad="directory_Load" TextMode="MultiLine"></asp:TextBox>               
                 <br />
                 <br />
                 <asp:Button class ="button" runat="server" Text="View" OnClick="view_Click"  />        

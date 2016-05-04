@@ -40,24 +40,19 @@ namespace Building
 
         }
 
-        protected String[] load_xml()
-        {
-            XmlDocument doc = new XmlDocument();
-            doc.Load(Server.MapPath(".\\xml\\directory.xml"));
-            List<String> names = new List<string>();
-            foreach (XmlNode party in doc.DocumentElement.ChildNodes)
-                {
-                    XmlNode nameElement = party.FirstChild.FirstChild;
-                    names.Add(nameElement.InnerText.ToString());
-                }
-            
-            return names.ToArray();
-
-        }
 
         protected void directory_Load(object sender, EventArgs e)
         {
-            load_xml();
+            XmlDocument doc = new XmlDocument();
+            doc.Load(Server.MapPath(".\\xml\\directory.xml"));
+            foreach (XmlNode party in doc.DocumentElement.ChildNodes)
+            {
+                XmlNode nameElement = party.FirstChild.FirstChild;       
+                directory.Text += nameElement.InnerText.ToString() + Environment.NewLine;
+            }
+
+
+
         }
 
     }
